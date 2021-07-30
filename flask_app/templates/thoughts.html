@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(79, 235, 196);
+        }
+        h1 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: rgb(238, 137, 22);;
+        }
+        table{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bonzai</h1>
+    <h2>Welcome {{user.first_name}}!</h2>
+
+    <form action="/create_thought/{{user.id}}" method="post" class="col-6 mx-auto">
+        <input type="text" for="thought" name="thought"  class="form-control">
+        <input type="submit" value="Add Thought" class="btn btn-success">
+    </form>
+
+
+    <table border = 5>
+
+        {% for user_here in users %}
+            {% for thought in all_thoughts %}
+                {% if user_here.id == thought.user_id %}
+                    <tr>
+                        <td><a href="/show/{{ thought.user_id }}">{{user_here.first_name}} says</a></td>
+                        <td>{{thought.thought}}</td>
+                        <td>
+                            <a href="/like/{{ thought.id }}">Like</a>
+                            <a href="/dislike/{{ thought.id }}">Dislike</a>
+                        </td>
+                        <td>{{thought.likes}} likes</td>
+                        <td><a href="/comments/{{ thought.id }}/{{ thought.user_id }}">Comments</a></td>
+                        {% if user.id == thought.user_id %}
+                            <td><a href="/destroy/{{ thought.id }}">Delete</a></td>
+                        {% endif %}
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </table>
+
+
+    <a href="/logout">Logout</a>
+
+</body>
+</html>
+
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+

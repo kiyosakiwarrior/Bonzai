@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <style>
+        body {
+            background-color: rgb(79, 235, 196);
+        }
+        h1 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: rgb(238, 137, 22);;
+        }
+        table{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bonzai</h1>
+    <h2>Welcome {{user.first_name}}!</h2>
+    <h3>{{selected_user.first_name}} says</h3>
+    <table border=2>
+        <tr>
+            <td style="font-size: 30px;">{{thought.thought}}</td>
+        </tr>
+    </table>
+    <h3>Comments:</h3>
+    <table border = 5>
+        {% for user_here in users %}
+            {% for comment in all_comments %}
+                {% if user_here.id == comment.user_id %}
+                    <tr>
+                        <td>{{user_here.first_name}} says</td>
+                        <td>{{comment.comment}}</td>
+                        {% if comment.user_id == user.id %}
+                            <td><a href="/destroy_comment/{{comment.id}}/{{thought.id}}/{{selected_user.id}}">Delete</a></td>
+                        {% endif %}
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </table>
+
+    <form action="/create_comment/{{user.id}}/{{thought.id}}/{{selected_user.id}}" method="post" class="col-6 mx-auto">
+        <input type="text" for="comment" name="comment"  class="form-control">
+        <input type="submit" value="Add a Comment" class="btn btn-success">
+    </form>
+    
+
+    <a href="/dashboard">Dashboard</a>
+    <a href="/">Logout</a>
+
+</body>
+</html>

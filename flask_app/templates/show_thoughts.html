@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <style>
+        body {
+            background-color: rgb(79, 235, 196);
+        }
+        h1 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: rgb(238, 137, 22);;
+        }
+        table{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bonzai</h1>
+    <h2>{{selected_user.first_name}}'s Thoughts</h2>
+    <table border = 5>
+        {% for thought in thoughts %}
+            <tr>
+                <td>{{thought.thought}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/dashboard">Dashboard</a>
+    <a href="/">Logout</a>
+
+</body>
+</html>

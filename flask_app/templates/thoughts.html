@@ -21,13 +21,27 @@
 
     <h1>Bonzai</h1>
     <h2>Welcome {{user.first_name}}!</h2>
+    <!--
+    <h2>Hottest Thought:</h2>
+    <table border=1>
+        <tr>
+            {% set greatest_likes = 0 %}
+            {% set temp2 = all_thoughts|length - 1 %}
+            {% for thought in all_thoughts %}
+                {% if thought.likes > greatest_likes %}
+                    {% set greatest_likes = thought.likes %}
+                    {{greatest_likes}}
+                    {% set top_thought = thought.thought %}
+                    {{top_thought}}
+                    {% if loop.index == temp2 %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+    </table>
+    -->
 
-    <form action="/create_thought/{{user.id}}" method="post" class="col-6 mx-auto">
-        <input type="text" for="thought" name="thought"  class="form-control">
-        <input type="submit" value="Add Thought" class="btn btn-success">
-    </form>
-
-
+    <h2>All Thoughts:</h2>
     <table border = 5>
 
         {% for user_here in users %}
@@ -50,6 +64,11 @@
             {% endfor %}
         {% endfor %}
     </table>
+
+    <form action="/create_thought/{{user.id}}" method="post" class="col-6 mx-auto">
+        <input type="text" for="thought" name="thought"  class="form-control">
+        <input type="submit" value="Add Thought" class="btn btn-success">
+    </form>
 
 
     <a href="/logout">Logout</a>

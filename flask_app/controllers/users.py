@@ -10,6 +10,11 @@ def index():
     # call the get all classmethod to get all friends
     return render_template("index.html")
 
+@app.route('/personal')
+def personal():
+    # call the get all classmethod to get all friends
+    return render_template("personal.html")
+
 @app.route('/logout')
 def logout():
     session.clear()

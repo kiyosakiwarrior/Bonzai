@@ -1,0 +1,213 @@
+*{
+    font-family: Helvetica;
+    padding: 0px;
+    margin: 0px;
+}
+.wholewebpage{
+    height: 100vw;
+    width: 100vw;
+    background-color: white;
+}
+.pageheader{
+    height: 100px;
+    width: inherit;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row2 {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+.row3 {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+.usercard, .connectionrequests{
+    margin: 20px;
+}
+.education, .connections {
+    margin: 20px;
+}
+h1 {
+    color: white;
+    display: inline;
+    text-decoration: none;
+}
+.btn{
+    margin-right: 30px;
+    background-color: teal;
+    color: white;
+    height: 30px;
+    width: 75px;
+}
+.usercard {
+    width: 80vw;
+    height: 205px;
+    background-color: white;
+    border-style: solid;
+    border-color: lightgrey;
+}
+.user-circlenc{
+    height: 50px;
+    width: 50px;
+    margin: 2.4px;
+    border-radius: 50px;
+}
+.circleborder{
+    height: 55px;
+    width: 55px;
+    background-color: teal;
+    border-radius: 50px;
+}
+.wholecircle{
+    margin-left: 15px;
+    position: relative;
+    bottom: 30px;
+}
+.containerteal{
+    width: 80vw;
+    height: 75px;
+    background-color: teal;
+}
+h4, p {
+    display: flex;
+    align-items: center;
+}
+h3, h4, p {
+    margin-bottom: 10px;
+    margin-left: 15px;
+    position: relative;
+    bottom: 20px;
+}
+.smallicon{
+    height: 20px;
+    margin-right: 5px;
+}
+.a2{
+    color: blue;
+    text-decoration: underline;
+    margin-left: 0;
+}
+.p2{
+    position: relative;
+    right: 25px;
+}
+.education {
+    width: 80vw;
+    height: 250px;
+    background-color: white;
+    border-style: solid;
+    border-color: lightgrey;
+    margin-top: 10px;
+}
+h6{
+    color: gray;
+}
+#educationlabel{
+    margin-left: 25px;
+}
+.connectionrequests {
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    border-style: solid;
+    border-color: lightgrey;
+}
+.circle{
+    position: relative;
+    left: 11px;
+    top: 7px;
+}
+#friendrequest1, #friendrequest2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+.friendrequest{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+h5{
+    margin-left: 10px;
+    color: black;
+}
+.smallicon3{
+    height: 30px;
+    border-radius: 50px;
+}
+.connections{
+    width: 250px;
+    height: 263px;
+    background-color: white;
+    border-style: solid;
+    border-color: lightgrey;
+    position: relative;
+    bottom: 130px;
+}
+.notifications2{
+    height: 30px;
+    width: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-right: 8px;
+}
+.circle2{
+    font-size: 15px;
+    position: relative;
+    left: 10px;
+    top: 6px;
+}
+.connectionnotification{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.viewmore{
+    width: 240px;
+    height: 40px;
+    border-style: solid;
+    border-color: lightgray;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 3px;
+}
+.containergray{
+    width: inherit;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+h2 {
+    font-size: 16px;
+    color: white;
+}
+.notifications{
+    height: 30px;
+    width: 30px;
+    background-color: gray;
+    border-radius: 100px;
+    margin-left: 15px;
+    margin-right: 8px;
+}

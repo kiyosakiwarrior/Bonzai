@@ -15,6 +15,11 @@ def personal():
     # call the get all classmethod to get all friends
     return render_template("personal.html")
 
+@app.route('/cooking')
+def cooking():
+    # call the get all classmethod to get all friends
+    return render_template("cooking.html")
+
 @app.route('/logout')
 def logout():
     session.clear()

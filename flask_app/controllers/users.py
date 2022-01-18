@@ -13,12 +13,17 @@ def index():
 @app.route('/personal')
 def personal():
     # call the get all classmethod to get all friends
-    return render_template("personal.html")
+    return render_template("personal2.html")
 
 @app.route('/cooking')
 def cooking():
     # call the get all classmethod to get all friends
     return render_template("cooking.html")
+
+@app.route('/projects')
+def projects():
+    # call the get all classmethod to get all friends
+    return render_template("projects.html")
 
 @app.route('/logout')
 def logout():

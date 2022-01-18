@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/thoughts.css">
     <title>Document</title>
     <style>
         body {
@@ -42,7 +43,7 @@
     -->
 
     <h2>All Thoughts:</h2>
-    <table border = 5>
+    <table border = 5 class="table">
 
         {% for user_here in users %}
             {% for thought in all_thoughts %}
@@ -65,13 +66,18 @@
         {% endfor %}
     </table>
 
+    <br>
+
     <form action="/create_thought/{{user.id}}" method="post" class="col-6 mx-auto">
         <input type="text" for="thought" name="thought"  class="form-control">
         <input type="submit" value="Add Thought" class="btn btn-success">
     </form>
 
+    <br>
 
-    <a href="/logout">Logout</a>
+    <button>
+        <a href="/logout">Logout</a>
+    </button>
 
 </body>
 </html>

@@ -15,6 +15,11 @@ def personal():
     # call the get all classmethod to get all friends
     return render_template("personal2.html")
 
+@app.route('/coolbackground')
+def coolbackground():
+    # call the get all classmethod to get all friends
+    return render_template("personal3.html")
+
 @app.route('/cooking')
 def cooking():
     # call the get all classmethod to get all friends
